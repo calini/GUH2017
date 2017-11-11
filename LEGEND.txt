@@ -1,0 +1,10 @@
+0 - Delivery;
+1 - Order(s) tracking;
+2 - Problem: (missing/broken) product(s);
+3 - Refund;
+4 - Cancellation;
+5 - Payment issue;
+6 - Product(s) information;
+7 - Offer(s);
+8 - Purchase(s) via e-mail;
+9 - Advice(s).
