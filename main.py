@@ -26,8 +26,8 @@ SVM.train_clf(clf, train_features, y)
 train_guesses = SVM.classify(clf, train_features)
 test_guesses = SVM.classify(clf, test_features)
 
-print 'training performance: ', SVM.eval_performance(train_guesses, y)
-print 'test performance: ', SVM.eval_performance(test_guesses, test_labels)
+print('training performance: ', SVM.eval_performance(train_guesses, y))
+print('test performance: ', SVM.eval_performance(test_guesses, test_labels))
 
 
 
