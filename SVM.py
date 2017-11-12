@@ -1,11 +1,12 @@
 from sklearn.svm import LinearSVC
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
 import pickle
 
 #returns a linear SVM classifier
 #see default values used for the model at
 #http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html
-def get_classifier():
-    return LinearSVC(random_state=0)
+
 
 #trains the given classifier with the provided data
 def train_clf(clf, feature_values, original_labels):
@@ -16,15 +17,24 @@ def train_clf(clf, feature_values, original_labels):
 def classify(clf, feature_values):
     return clf.predict(feature_values)
 
-#returns a string that can be used with SVM.get_classffier_object(s)
-#to reconstruct the same object from the string
-#the string can be stored on disk and the training won't be lost
-def get_classifier_string(clf):
-    return pickle.dumps(clf)
+#returns a classfier if one was already saved on the disk or a new one
+def get_classifier():
+    # return KNeighborsClassifier(n_neighbors=3)
+    return LinearSVC(random_state=0)
+    try:
+        saved_classfier = open('classifier', 'r')
+        clf = pickle.loads(saved_classfier.read())
+        saved_classfier.close()
+    except IOError:
+        pass
+
 
 #returns an object from the saved classfier string
-def get_classffier_object(string):
-    return pickle.loads(string)
+def save_classifier_to_disk(string):
+    string_clf = pickle.dumps(clf)
+    file_to_write_to = open('classifier', 'w')
+    file_to_write_to.write(string_clf)
+    file_to_write_to.close()
 
 def eval_performance(guessed_labels, actual_labels):
     correct = 0.0
