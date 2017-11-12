@@ -123,6 +123,38 @@ def main():
     except errors.HttpError as error:
         print("An error occured: " + error)
 
+def clear_tags():
+    credentials = get_credentials()
+    http = credentials.authorize(httplib2.Http())
+
+    service = discovery.build('gmail', 'v1', http=http)
+    results = service.users().labels().list(userId='me').execute()
+    labels = results.get('labels', [])
+
+    user_labels = []
+    for label in labels:
+        if label['type'] == 'user':
+            # print(label)
+            user_labels.append(label)
+
+    user_labels_ids = []
+    # print(user_labels)
+    for label1 in user_labels:
+        user_labels_ids.append(label1['id'])
+
+    messages = []
+    #choose all the messages that match these labels
+    for label in user_labels_ids:
+        results = service.users().messages().list(userId='me', labelIds=[label]).execute()
+        messages = messages + results.get('messages', [])
+        
+    print(user_labels_ids)
+    remove_labels={'removeLabelIds': user_labels_ids, 'addLabelIds':['INBOX']}
+    print(messages)
+
+    for msg in messages:
+        service.users().messages().modify(id=msg['id'], userId='me', body=remove_labels).execute()
+
 
 if __name__ == '__main__':
     main()
