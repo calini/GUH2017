@@ -3,7 +3,7 @@ import os
 
 import base64
 import email
-import random
+import main as classifier
 from apiclient import discovery
 from apiclient import errors
 from oauth2client import client
@@ -55,7 +55,8 @@ def get_credentials():
 def getMessageBody(service, user_id, msg_id):
     try:
         message = service.users().messages().get(userId=user_id, id=msg_id, format='raw').execute()
-        msg_str = base64.urlsafe_b64decode(message['raw'].encode('ASCII'))
+        msg_str = base64.urlsafe_b64decode(message['raw'].encode('ASCII')).decode('utf-8')
+        # print(type(msg_str.decode('utf-8')))
         mime_msg = email.message_from_string(msg_str)
         messageMainType = mime_msg.get_content_maintype()
         if messageMainType == 'multipart':
@@ -69,18 +70,7 @@ def getMessageBody(service, user_id, msg_id):
             print("An error occurred: %s" % error)
 
 def classify(emailBody):
-    categories = [
-    "ADVICE",
-    "CANCELLATION",
-    "DELIVERY",
-    "GENERAL FEEDBACK ",
-    "OFFERS",
-    "ORDER TRACKING",
-    "PAYMENT ISSUE",
-    "PRODUCT INFORMATION",
-    "PRODUCT PROBLEM",
-    "REFUND"]
-    return [random.choice(categories)]
+    return classifier.classify_email(emailBody)
 
 def categorise(service, classification, msg_id):
     try:

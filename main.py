@@ -98,13 +98,12 @@ def classify_email(email):
         labels = labels + intended_websites[0]
     sentmnt_score = features[0][-1]
 
-    if sentmnt_score < 0:
-        if sentmnt_score > -0.333333:
-            labels.append('Low Priority')
-        elif sentmnt_score < -0.7:
-            labels.append('Mid Priority')
-        else:
-            labels.append('High Priority')
+    if sentmnt_score < -0.7:
+        labels.append('High priority')
+    elif sentmnt_score < 0.2:
+        labels.append('Mid priority')
+    else:
+        labels.append('Low priority')
 
 
     if not already_trained:
@@ -112,7 +111,6 @@ def classify_email(email):
     if not feature_extractor.has_vocab:
         feature_extractor.save_vectorizer()
 
-    print(labels[1])
     return labels
 
 
