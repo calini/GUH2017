@@ -43,6 +43,6 @@ def eval_performance(guessed_labels, actual_labels, class_names):
         if guessed_labels[i] == actual_labels[i]:
             correct += 1.0
         else:
-            print(i, class_names[guessed_labels[i]], class_names[actual_labels[i]]) 
+            print('#', i, 'guessed: ', class_names[guessed_labels[i]], ', actual: ', class_names[actual_labels[i]]) 
 
     return correct/len(guessed_labels)

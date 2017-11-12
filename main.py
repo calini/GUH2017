@@ -101,7 +101,7 @@ def classify_email(email):
     if sentmnt_score < -0.7:
         labels.append('High priority')
     elif sentmnt_score < 0.2:
-        labels.append('Mid priority')
+        labels.append('Medium priority')
     else:
         labels.append('Low priority')
 
@@ -115,7 +115,7 @@ def classify_email(email):
 
 
 
-# Read all data
+# # Read all data
 # (emails, y) = read_email_data('E-MAILS.txt', 'LABELS.txt')
 # (test_emails, test_labels) = read_email_data('TESTS.txt', 'TEST_LABELS.txt')
 # websites = read_website_list('websites.txt')
