@@ -24,6 +24,22 @@ def read_website_list(file_name):
     
     return website_list
 
+# Creates a dictionary which maps SVM classes to their names
+def create_class_dict():
+    class_dict = {
+            0 : 'delivery',
+            1 : 'order tracking',
+            2 : 'missing/broken product',
+            3 : 'refund',
+            4 : 'cancellation',
+            5 : 'payment issues',
+            6 : 'info/questions',
+            7 : 'website feedback',
+            8 : 'offers/discounts',
+            9 : 'nutrition advice'}
+    
+    return class_dict
+
 # Finds which which website occurs in the email
 def find_intended_websites(websites, emails):
     intended_websites = []
@@ -57,6 +73,10 @@ websites = read_website_list('websites.txt')
 
 #get the website about which the email is
 intended_websites = find_intended_websites(websites, emails)
+
+#a dictionary with the actual class names
+dict_names = create_dict_names()
+print(dict_names)
  
 #check for easy typos
 spell_chck = SpellChecker('en')
