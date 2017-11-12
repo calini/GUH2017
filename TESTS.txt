@@ -1,9 +1,9 @@
 I think that my delivery is delayed. The expected date was yesterday and no one
 came to my door
 --------------------------------------------------------
-Could you please tell me the location of my product? Thank you in advance.
+Could you please tell me how I can track the location of my order?
 --------------------------------------------------------
-Can you tell me where my product is?
+I am very upset with the package I receiverd. Most of the items are broken, and there is some missing stuff too!
 --------------------------------------------------------
 The product I received was quite bad, and I want a refund.
 --------------------------------------------------------
@@ -11,3 +11,35 @@ I changed my mind in the last minute. Is it possible to cancel the product deliv
 --------------------------------------------------------
 I need help urgently. I paid with a credit card and they money seemed to be blocked
 from my account by the order was not marked purchased. Help fast!
+--------------------------------------------------------
+I am interested in learning about the Whey protein on myprotein. The description
+is not very clear and I want to ask you to explain its purpose please.
+--------------------------------------------------------
+I think you website doesn't function properly. There is a mistake in the code
+of the main page in the JavaScript script.
+--------------------------------------------------------
+Can you clarify the offer on Probikekit that you published last week? I am not sure in what conditions I get a discount.
+--------------------------------------------------------
+I am not sure what nutrition program I need to buy from you in order to keep in shape. I am looking to build some muscle mass for a short period of time.
+--------------------------------------------------------
+I expected my package 3 days ago and it still hasn't arrived. It must be late or lost somewhere, can you check that? This is unnaceptable!
+--------------------------------------------------------
+Can you tell me how the order tracking works in detail? I can't get it to work.
+--------------------------------------------------------
+I'm not sure how your delivery personnel drives, but they managed to break most of my items. My package is basically useless!
+--------------------------------------------------------
+This is the third time I get a bad product, and I have to ask for a refund this time. Can you send me a refund form?
+--------------------------------------------------------
+What is the policy of requesting cancellation of an order? I cannot cancel it in the bank. Thank you in advance.
+--------------------------------------------------------
+I need some urgent help with my credit card. I lost connection while validating the payment from the card,
+so the money was taken from my account but the payment didn't register. Can you help me fix it?
+--------------------------------------------------------
+I can find any information on Ideal Fit's products, can you sent me a leaflet with information or a link to
+an information page? Thank you.
+--------------------------------------------------------
+Your website could be a lot more user-friendly. You could make it more interactive.
+--------------------------------------------------------
+The offers are explained poorly, can you explain in detail how Ideal Shape's discounts work. From my understanding, it's 3 for the price of 2, right?
+--------------------------------------------------------
+Last week you gave me some very useful advice on nutrition. Can you send me a link to the nutrition articles?
