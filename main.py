@@ -1,7 +1,7 @@
 import SVM
 import extract_features
 
-# Reads email data from a file
+# Reads emails and labels data from files
 def read_email_data(email_file_name, labels_file_name):
     emails_file = open(email_file_name, 'r')
     emails_text = emails_file.read()
@@ -41,17 +41,30 @@ def find_intended_websites(websites, emails):
 (test_emails, test_labels) = read_email_data('TESTS.txt', 'TEST_LABELS.txt')
 websites = read_website_list('websites.txt')
 
+#get the website about which the email is
 intended_websites = find_intended_websites(websites, emails)
-print(intended_websites)   
+ 
 
+
+#extract the needed features from the datasets
 feature_extractor = extract_features.FeatureExtractor()
 
-(vect, train_features, feature_names) = feature_extractor.extract_email_train_features(emails)
-test_features = feature_extractor.extract_email_test_features(vect, test_emails)
+#if we laoded it form the disk, then dont train it. read the trained model data
+if not feature_extractor.has_vocab:
+    (train_features, feature_names) = feature_extractor.extract_email_train_features(emails)
+else:
+    feature_names = feature_extractor.vect.get_feature_names()
+    train_features = feature_extractor.vect.training_data_features
 
-clf = SVM.get_classifier()
+#extract the test data
+test_features = feature_extractor.extract_email_test_features(test_emails)
 
-SVM.train_clf(clf, train_features, y)
+
+#classify
+(clf, already_trained) = SVM.get_classifier()
+
+if not already_trained:
+    SVM.train_clf(clf, train_features, y)
 
 train_guesses = SVM.classify(clf, train_features)
 test_guesses = SVM.classify(clf, test_features)
@@ -60,4 +73,5 @@ print('training performance: ', SVM.eval_performance(train_guesses, y))
 print('test performance: ', SVM.eval_performance(test_guesses, test_labels))
 
 
-
+feature_extractor.save_vectorizer()
+SVM.save_classifier_to_disk(clf)
