@@ -1,6 +1,8 @@
 import SVM
 import extract_features
-def read_input(email_file_name, labels_file_name):
+
+# Reads email data from a file
+def read_email_data(email_file_name, labels_file_name):
     emails_file = open(email_file_name, 'r')
     emails_text = emails_file.read()
     emails_text = emails_text.replace('\n', ' ')
@@ -11,8 +13,36 @@ def read_input(email_file_name, labels_file_name):
 
     return (emails, labels)
 
-(emails, y) = read_input('E-MAILS.txt', 'LABELS.txt')
-(test_emails, test_labels) = read_input('TESTS.txt', 'TEST_LABELS.txt')
+# Reads the list of possible websites from a file
+def read_website_list(file_name):
+    file = open(file_name, 'r')
+    website_list = file.read().split('\n')
+    
+    return website_list
+
+# Finds which which website occurs in the email
+def find_intended_websites(websites, emails):
+    intended_websites = []
+    for email in emails:
+        found = False
+        for website in websites:
+            if website in email:
+                intended_websites.append(website)
+                found = True
+                break
+            
+        if not found:
+            intended_websites.append('Unknown')
+            
+    return intended_websites
+
+# Read all data
+(emails, y) = read_email_data('E-MAILS.txt', 'LABELS.txt')
+(test_emails, test_labels) = read_email_data('TESTS.txt', 'TEST_LABELS.txt')
+websites = read_website_list('websites.txt')
+
+intended_websites = find_intended_websites(websites, emails)
+print(intended_websites)   
 
 feature_extractor = extract_features.FeatureExtractor()
 
