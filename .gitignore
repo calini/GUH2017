@@ -22,4 +22,7 @@
 hs_err_pid*
 
 *.DS_Store
-
+*.pyc
+classifier
+vectorizer
+cred.json
