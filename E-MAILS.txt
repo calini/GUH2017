@@ -2,28 +2,38 @@ I am writing regarding to my late delivery date. I am very disappointed about th
 --------------------------------------------------------
 Would you be so kind telling me where is my order at this moment? I really apreciate it. Thank you very much! 
 --------------------------------------------------------
-I want to know where is my product.
+I want to know where is my product. I placed an order on Monday and I am not sure if it was dispatched
+or if it is out for delivery. Can you please send me the some tracking information please?
 --------------------------------------------------------
+I ordered a product of your website SkinCareRx and it does not do what I expected it to do.
 I am writing this e-mail in order to ask for a refund, because I am not happy at all with my product.
+If I could have my money back, that would be great.
 --------------------------------------------------------
 I would like, if possible, to cancel my product delivery. I don't want it anymore.
+My brother ordered it by mistake. I also do not have the money to afford it.
 --------------------------------------------------------
 I tried to pay with my bank card, and I found out that my money was taken from the card, but the product wasn't ordered. I need to sort this out fast.
 --------------------------------------------------------
 Can you give me more information about your products related to make up? Thank you very much for this!
+I love putting mascara on my face and I think that GrowGorgeous will be my website for that.
 --------------------------------------------------------
-Can I somehow subscribe to your company to get all the offers available?
+Can I somehow subscribe to your company to get all the offers available? I am interested
+in all of your websites so I want to know about them.
 --------------------------------------------------------
-I would like to but the My Protein bottle. Can you deliver it to the 14 Langton Road?
+I did not get the discount for you products. I think that the offer listed on you website does not work.
+The bundle of products on IdealFit does not make the third one free. It is so misleading.
 --------------------------------------------------------
-I would like to get an advice regarding your health products.
+I would like to get some advice regarding your health products. I want to gain weigth
+because after that I am looking for building up muscle mass. Can you recommend me something
+that will do this for me?
 --------------------------------------------------------
 I ordered a few weeks ago and my order from MyProtein has not arrived yet.
 I think the delivery has been missed. Can you please resend it? I also was not in my home
-at the date so I mihgt have missed the delivery guy.
+at the date so I might have missed the delivery guy.
+I think the concierge was not at the reception when the guy came.
 --------------------------------------------------------
-I placed an order 3 days ago and I am not sure where it is. Can you send me the
-tracking number again for my order. This is the third time I am writing you about this.
+The whey protein pack was too little. I am not sure that this matches the description in the
+product page. I think this is a great problem for me! 
 --------------------------------------------------------
 The shirt I received from you was damaged. One of its sleeved was missing.
 And it was very small.
@@ -37,4 +47,17 @@ The website said that my payment was not completed, but my order is marked as
 accepted.
 --------------------------------------------------------
 I was interested if you give out scoops with your proteins. Because it doesn't way
-this on your website.  
+this on your website.
+--------------------------------------------------------
+I ordered from Glossybox a few days ago. I think there would be a problem with 
+the order. I placed the order when my account balance was already in overdraft.
+So this made my balance negative. More money was withdrawn from my account but
+the order did not seem to be processed.
+--------------------------------------------------------
+The product that I ordered was not what I expected is there a way to return it?
+Alse, do you take the return expenses or do I?
+--------------------------------------------------------
+The design on you company website seems to have a bug on line 1337 of the main.css file.
+I was looking into it and it seemed that the developer was very drunk at the time
+and the page displays upside down. 
+--------------------------------------------------------
