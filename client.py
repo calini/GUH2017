@@ -124,6 +124,7 @@ def main():
         print("An error occured: " + error)
 
 def clear_tags():
+    print('Clearing labels from emails...')
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
 
@@ -148,9 +149,9 @@ def clear_tags():
         results = service.users().messages().list(userId='me', labelIds=[label]).execute()
         messages = messages + results.get('messages', [])
         
-    print(user_labels_ids)
+    # print(user_labels_ids)
     remove_labels={'removeLabelIds': user_labels_ids, 'addLabelIds':['INBOX']}
-    print(messages)
+    # print(messages)
 
     for msg in messages:
         service.users().messages().modify(id=msg['id'], userId='me', body=remove_labels).execute()
