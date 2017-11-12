@@ -1,5 +1,7 @@
 import SVM
 import extract_features
+import time
+start_time = time.time()
 
 # Reads emails and labels data from files
 def read_email_data(email_file_name, labels_file_name):
@@ -44,7 +46,7 @@ websites = read_website_list('websites.txt')
 #get the website about which the email is
 intended_websites = find_intended_websites(websites, emails)
  
-
+#check for easy typos
 
 #extract the needed features from the datasets
 feature_extractor = extract_features.FeatureExtractor()
@@ -75,3 +77,5 @@ print('test performance: ', SVM.eval_performance(test_guesses, test_labels))
 
 feature_extractor.save_vectorizer()
 SVM.save_classifier_to_disk(clf)
+
+print("--- %s seconds ---" % (time.time() - start_time))
