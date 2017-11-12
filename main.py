@@ -1,6 +1,8 @@
 import SVM
 import extract_features
 import time
+from enchant.checker import SpellChecker
+
 start_time = time.time()
 
 # Reads emails and labels data from files
@@ -38,6 +40,16 @@ def find_intended_websites(websites, emails):
             
     return intended_websites
 
+#uses enchant to detect and correct typos in a single block of text
+def detect_and_correct_typos(spell_chck, email):
+    spell_chck.set_text(email)
+    for error in spell_chck:
+        if error.word.lower() in error.suggest():
+            spell_chck.add()
+        else:
+            email = email.replace(error.word, error.suggest()[0])
+    return email
+
 # Read all data
 (emails, y) = read_email_data('E-MAILS.txt', 'LABELS.txt')
 (test_emails, test_labels) = read_email_data('TESTS.txt', 'TEST_LABELS.txt')
@@ -47,6 +59,10 @@ websites = read_website_list('websites.txt')
 intended_websites = find_intended_websites(websites, emails)
  
 #check for easy typos
+spell_chck = SpellChecker('en')
+[spell_chck.add(word) for word in open('websites.txt').read().split('\n')];
+emails = [detect_and_correct_typos(spell_chck, mail) for mail in emails]
+test_emails = [detect_and_correct_typos(spell_chck, mail) for mail in test_emails] 
 
 #extract the needed features from the datasets
 feature_extractor = extract_features.FeatureExtractor()
