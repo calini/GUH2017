@@ -12,7 +12,7 @@ emails = ['I am very upset with the product',
           'The product was terrible',
           'I am writing this to complain about the delivery',
           'Do you sell proteins?',
-          ']
+          ]
 test_email = 'The delivery was terrible'
 
 # Returns the feature matrix for a set of training emails
