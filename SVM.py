@@ -18,19 +18,19 @@ def classify(clf, feature_values):
     return clf.predict(feature_values)
 
 #returns a classfier if one was already saved on the disk or a new one
+#also returns True if the classfier was read form disk, false if its new
 def get_classifier():
-    # return KNeighborsClassifier(n_neighbors=3)
-    return LinearSVC(random_state=0)
     try:
         saved_classfier = open('classifier', 'r')
         clf = pickle.loads(saved_classfier.read())
         saved_classfier.close()
+        return clf, True
     except IOError:
-        pass
+        return LinearSVC(random_state=0), False
 
 
 #returns an object from the saved classfier string
-def save_classifier_to_disk(string):
+def save_classifier_to_disk(clf):
     string_clf = pickle.dumps(clf)
     file_to_write_to = open('classifier', 'w')
     file_to_write_to.write(string_clf)
