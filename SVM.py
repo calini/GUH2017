@@ -36,13 +36,13 @@ def save_classifier_to_disk(clf):
     file_to_write_to.write(string_clf)
     file_to_write_to.close()
 
-def eval_performance(guessed_labels, actual_labels):
+def eval_performance(guessed_labels, actual_labels, class_names):
     correct = 0.0
 
     for i in range(0, len(guessed_labels)):
         if guessed_labels[i] == actual_labels[i]:
             correct += 1.0
         else:
-            print(i, guessed_labels[i], actual_labels[i]) 
+            print(i, class_names[guessed_labels[i]], class_names[actual_labels[i]]) 
 
     return correct/len(guessed_labels)
