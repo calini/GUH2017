@@ -62,8 +62,8 @@ def detect_and_correct_typos(spell_chck, email):
     return email
 
 def classify_email(email):
-    (training_emails, y) = read_email_data('E-MAILS.txt', 'LABELS.txt')
-    websites = read_website_list('websites.txt')
+    (training_emails, y) = read_email_data('txt_lists/E-MAILS.txt', 'txt_lists/LABELS.txt')
+    websites = read_website_list('txt_lists/websites.txt')
 
     #get the website about which the email is
     intended_websites = find_intended_websites(websites, [email])
@@ -116,8 +116,8 @@ def classify_email(email):
 
 
 # # Read all data
-# (emails, y) = read_email_data('E-MAILS.txt', 'LABELS.txt')
-# (test_emails, test_labels) = read_email_data('TESTS.txt', 'TEST_LABELS.txt')
+# (emails, y) = read_email_data('txt_lists/E-MAILS.txt', 'txt_lists/LABELS.txt')
+# (test_emails, test_labels) = read_email_data('txt_lists/TESTS.txt', 'txt_lists/TEST_LABELS.txt')
 # websites = read_website_list('websites.txt')
 
 # #get the website about which the email is

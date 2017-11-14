@@ -21,7 +21,7 @@ def classify(clf, feature_values):
 #also returns True if the classfier was read form disk, false if its new
 def get_classifier():
     try:
-        saved_classfier = open('classifier', 'rb')
+        saved_classfier = open('saved_models/classifier', 'rb')
         clf = pickle.loads(saved_classfier.read())
         saved_classfier.close()
         return clf, True
@@ -32,7 +32,7 @@ def get_classifier():
 #returns an object from the saved classfier string
 def save_classifier_to_disk(clf):
     string_clf = pickle.dumps(clf)
-    file_to_write_to = open('classifier', 'wb')
+    file_to_write_to = open('saved_models/classifier', 'wb')
     file_to_write_to.write(string_clf)
     file_to_write_to.close()
 

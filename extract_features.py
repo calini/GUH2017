@@ -22,7 +22,7 @@ class FeatureExtractor:
     def __init__(self):
         self.google_api_client = language.LanguageServiceClient()
         try:
-            saved_vect = open('vectorizer', 'rb')
+            saved_vect = open('saved_models/vectorizer', 'rb')
             self.vect = pickle.loads(saved_vect.read())
             saved_vect.close()
             self.has_vocab = True
@@ -76,7 +76,7 @@ class FeatureExtractor:
 
     def save_vectorizer(self):
         string_vect = pickle.dumps(self.vect)
-        file_to_write_to = open('vectorizer', 'wb')
+        file_to_write_to = open('saved_models/vectorizer', 'wb')
         file_to_write_to.write(string_vect)
         file_to_write_to.close()
 
