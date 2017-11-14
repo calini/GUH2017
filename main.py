@@ -70,7 +70,7 @@ def classify_email(email):
 
     class_dict = create_class_dict() #a map of indeces to names of classes
     spell_chck = SpellChecker('en')
-    [spell_chck.add(word) for word in open('websites.txt').read().split('\n')];
+    [spell_chck.add(word) for word in open('txt_lists/websites.txt').read().split('\n')];
     email = detect_and_correct_typos(spell_chck, email)
 
     #extract the needed features from the datasets
