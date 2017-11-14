@@ -1,6 +1,4 @@
 from sklearn.svm import LinearSVC
-from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
 import pickle
 
 #returns a linear SVM classifier
@@ -41,7 +39,7 @@ def eval_performance(guessed_labels, actual_labels, class_names):
 
     for i in range(0, len(guessed_labels)):
         if guessed_labels[i] == actual_labels[i]:
-            correct += 1.0
+            correct += 1
         else:
             print('#', i, 'guessed: ', class_names[guessed_labels[i]], ', actual: ', class_names[actual_labels[i]]) 
 
